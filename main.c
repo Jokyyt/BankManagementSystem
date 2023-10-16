@@ -28,8 +28,7 @@ LISTES DES FONCTIONS :
 #include <string.h>
 #include <stdlib.h>
 #include <windows.h>
-
-
+#include "Librairies\cJSON\cJSON.h"
 
 int main() {
     User currentUser;
@@ -44,18 +43,17 @@ int main() {
 
             switch (choix) {
                 case 1:
-                    if (seConnecter(&currentUser) == 0) {;
+                    if (seConnecter(&currentUser) == 0) {
                         connecte = 1;
                         Sleep(1000);
                         break;
-                    }
-                    else {
+                    } else {
                         Sleep(1000);
                         printf("Connection error\n");
                         break;
                     }
                 case 2:
-                    if (creerCompte(&currentUser) == 0) {;
+                    if (creerCompte(&currentUser) == 0) {
                         Sleep(1000);
                         break;
                     } else {
@@ -94,7 +92,7 @@ int main() {
                     break;
                 case 5:
                     Sleep(2000);
-                    if (closeAccount(&currentUser, currentUser.username, currentUser.password) == 0) {;
+                    if (closeAccount(&currentUser, currentUser.username, currentUser.password) == 0) {
                         connecte = 0;
                         break;
                     } else {
@@ -118,5 +116,4 @@ int main() {
 
     return 0;
 }
-
 
