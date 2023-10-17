@@ -32,88 +32,11 @@ LISTES DES FONCTIONS :
 
 int main() {
     User currentUser;
-    int choix;
-    int connecte = 0; // 0 signifie que l'utilisateur n'est pas connecté
-
-    while (1) {
-        if (!connecte) {
-            Sleep(1000);
-            printf("1. Log in\n2. Create an account\n3. Exit\nChoose an option: ");
-            scanf("%d", &choix);
-
-            switch (choix) {
-                case 1:
-                    if (seConnecter(&currentUser) == 0) {
-                        connecte = 1;
-                        Sleep(1000);
-                        break;
-                    } else {
-                        Sleep(1000);
-                        printf("Connection error\n");
-                        break;
-                    }
-                case 2:
-                    if (creerCompte(&currentUser) == 0) {
-                        Sleep(1000);
-                        break;
-                    } else {
-                        Sleep(1000);
-                        printf("Account creation error\n");
-                        return 0;
-                    }
-                case 3:
-                    printf("Thank you for using our service. Goodbye!\n");
-                    return 0; // Quitter de manière propre
-                default:
-                    printf("Invalid option. Try again.\n");
-                    break;
-            }
-        } else {
-            Sleep(1000);
-            printf("\n1. Mon Compte\n2. Withdraw money\n3. Deposit money\n4. Check balance\n5. Close the account\n6. Log out\n7. Exit\nChoose an option: ");
-            scanf("%d", &choix);
-
-            switch (choix) {
-                case 1:
-                    Sleep(1000);
-                    editAccount(&currentUser);
-                    break;
-                case 2:
-                    Sleep(2000);
-                    retirerSolde(&currentUser, 0);
-                    break;
-                case 3:
-                    Sleep(1000);
-                    ajouterSolde(&currentUser, 0);
-                    break;
-                case 4:
-                    Sleep(1000);
-                    consultSolde(&currentUser, currentUser.username, currentUser.password);
-                    break;
-                case 5:
-                    Sleep(2000);
-                    if (closeAccount(&currentUser, currentUser.username, currentUser.password) == 0) {
-                        connecte = 0;
-                        break;
-                    } else {
-                        Sleep(1000);
-                        break;
-                    }
-                case 6:
-                    printf("Disconnection in progress...\n");
-                    Sleep(1500);
-                    connecte = 0;
-                    break;
-                case 7:
-                    printf("Thank you for using our service. Goodbye!\n");
-                    return 0; // Quitter de manière propre
-                default:
-                    printf("Invalid option. Try again.\n");
-                    break;
-            }
-        }
+    if (creerCompte(&currentUser) == 0) {
+        Sleep(1000);
+        return 0;
+    } else {
+        printf("Erreur lors de la création du compte\n");
+        return 1;
     }
-
-    return 0;
 }
-

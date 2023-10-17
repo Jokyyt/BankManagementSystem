@@ -3,6 +3,7 @@
     "files.associations": {
         "windows.h": "c",
         "bankfunctions.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "cjson.h": "c"
     }
 }
