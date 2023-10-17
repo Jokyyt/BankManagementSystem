@@ -20,23 +20,24 @@ LISTES DES FONCTIONS :
 - Verifier si username/password existent deja utilisés ✓
 
 
-
-
 */
+
 #include "bankfunctions.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <windows.h>
+#include <errno.h>
 #include "Librairies\cJSON\cJSON.h"
 
 int main() {
     User currentUser;
-    if (creerCompte(&currentUser) == 0) {
-        Sleep(1000);
-        return 0;
+    int connected = 0; // 0 signifie que l'utilisateur n'est pas connecté
+    if (Login(&currentUser) == 0) {
+        connected = 1;
+        printf("Connected!!\n");
     } else {
-        printf("Erreur lors de la création du compte\n");
-        return 1;
+        printf("Not Connected...\n");
+        return 0;
     }
 }

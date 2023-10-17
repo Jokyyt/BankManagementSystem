@@ -9,5 +9,6 @@ typedef struct User {
 // Déclarez vos fonctions
 int creerCompte(User *user);
 int checkInfos(User *user, const char *username, const char *password);
+int Login(User *user);
 
 #endif
