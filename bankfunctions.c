@@ -200,6 +200,21 @@ void get_infos(User *user) {
 }
 
 
+void addsolde(User *user, double amount) {
+    printf("Solde: %.2f $\n", user->solde);
+    printf("How much would you like to add? --> ");
+    scanf("%lf", &amount);
+    user->solde += amount; 
+    printf("New solde: %.2f $\n", user->solde);
+}
+
+void subtractsolde(User *user, double amount) {
+    printf("Solde: %.2f $\n", user->solde - amount);
+    printf("How much would you like to subtract? --> ");
+    scanf("%lf", &amount);
+    user->solde -= amount;
+    printf("New solde: %.2f $\n", user->solde);
+}
 
 
 

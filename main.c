@@ -1,26 +1,3 @@
-/* 
-
-***SYSTEME DE GESTION BANCAIRE***
-
-Dans ce projet de programmation C, vous simulerez un système bancaire simple avec crédit et débit sur des comptes bancaires.
-Ici, vous apprendrez à créer un compte d'épargne et à exposer les opérations de base telles que le crédit, le débit, la vérification du solde, la clôture du compte, etc., en utilisant un simple code en langage C composé de fonctions pour chaque opération. La gestion des fichiers peut stocker des données et des informations utilisateur, et plus tard, vous pouvez utiliser une simple base de données pour le stockage.
-Ce projet vous aidera à apprendre à structurer votre code puis à coder chaque module séparément.
-
-
-LISTES DES FONCTIONS :
-
-- Créer un compte ✓ 
-- Se connecter à son compte ✓ 
-- Retirer de l'argent 
-- Déposer de l'argent 
-- Consulter le compte 
-- Clôturer le compte 
-- Changer de username/password 
-- Virement entre comptes / - Gérérateur de ID pour chaque compte 
-- Verifier si username/password existent deja utilisés 
-
-
-*/
 
 #include "bankfunctions.h"
 #include <stdio.h>
@@ -72,7 +49,7 @@ int main() {
             }
         } else {
             Sleep(1000);
-            printf("\n1. Consult Account\n2. Log out\n3. Exit\nChoose an option: ");
+            printf("\n1. Consult Account\n2. Add\n3. Substract\n4. Log out\n5. Exit\nChoose an option: ");
             scanf("%d", &choix);
 
             switch (choix) {
@@ -81,11 +58,19 @@ int main() {
                     Sleep(1000);
                     break;
                 case 2:
+                    addsolde(&currentUser, 0);
+                    Sleep(1000);
+                    break;
+                case 3:
+                    subtractsolde(&currentUser, 0);
+                    Sleep(1000);
+                    break;
+                case 4:
                     printf("Disconnection in progress...\n");
                     Sleep(1500);
                     connected = 0;
                     break;
-                case 3:
+                case 5:
                     printf("Thank you for using our service. Goodbye!\n");
                     return 0; // Quitter de manière propre
                 default:
