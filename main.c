@@ -11,13 +11,13 @@ LISTES DES FONCTIONS :
 
 - Créer un compte ✓ 
 - Se connecter à son compte ✓ 
-- Retirer de l'argent ✓
-- Déposer de l'argent ✓
-- Consulter le compte ✓
-- Clôturer le compte ✓
-- Changer de username/password ✓
+- Retirer de l'argent 
+- Déposer de l'argent 
+- Consulter le compte 
+- Clôturer le compte 
+- Changer de username/password 
 - Virement entre comptes / - Gérérateur de ID pour chaque compte 
-- Verifier si username/password existent deja utilisés ✓
+- Verifier si username/password existent deja utilisés 
 
 
 */
@@ -32,12 +32,68 @@ LISTES DES FONCTIONS :
 
 int main() {
     User currentUser;
+    int choix;
     int connected = 0; // 0 signifie que l'utilisateur n'est pas connecté
-    if (Login(&currentUser) == 0) {
-        connected = 1;
-        printf("Connected!!\n");
-    } else {
-        printf("Not Connected...\n");
-        return 0;
+
+    while (1) {
+        if (!connected) {
+            Sleep(1000);
+            printf("1. Log in\n2. Create an account\n3. Exit\nChoose an option: ");
+            scanf("%d", &choix);
+
+            switch (choix) {
+                case 1:
+                    if (Login(&currentUser) == 0) {;
+                        connected = 1;
+                        printf("You are now logged in!\n");
+                        Sleep(1000);
+                        break;
+                    }
+                    else {
+                        Sleep(1000);
+                        printf("Connection error\n");
+                        break;
+                    }
+                case 2:
+                    if (createAccount(&currentUser) == 0) {;
+                        Sleep(1000);
+                        break;
+                    } else {
+                        Sleep(1000);
+                        printf("Account creation error\n");
+                        return 0;
+                    }
+                case 3:
+                    printf("Thank you for using our service. Goodbye!\n");
+                    return 0; // Quitter de manière propre
+                default:
+                    printf("Invalid option. Try again.\n");
+                    break;
+            }
+        } else {
+            Sleep(1000);
+            printf("\n1. Consult Account\n2. Log out\n3. Exit\nChoose an option: ");
+            scanf("%d", &choix);
+
+            switch (choix) {
+                case 1:
+                    get_infos(&currentUser);
+                    Sleep(1000);
+                    break;
+                case 2:
+                    printf("Disconnection in progress...\n");
+                    Sleep(1500);
+                    connected = 0;
+                    break;
+                case 3:
+                    printf("Thank you for using our service. Goodbye!\n");
+                    return 0; // Quitter de manière propre
+                default:
+                    printf("Invalid option. Try again.\n");
+                    break;
+            }
+        }
     }
+
+    return 0;
 }

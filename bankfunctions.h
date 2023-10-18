@@ -4,11 +4,13 @@
 typedef struct User {
     char *username;
     char *password;
+    double solde;
 } User;
 
 // Déclarez vos fonctions
-int creerCompte(User *user);
+int createAccount(User *user);
 int checkInfos(User *user, const char *username, const char *password);
 int Login(User *user);
+void get_infos(User *user);
 
 #endif

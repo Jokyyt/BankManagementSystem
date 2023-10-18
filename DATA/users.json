@@ -1,23 +1,39 @@
 {
 	"users":	[{
+			"username":	"sandro",
+			"password":	"mannina",
+			"solde":	0
+		}, {
+			"username":	"sach",
+			"password":	"dudu",
+			"solde":	0
+		}, {
 			"username":	"test",
 			"password":	"test",
 			"solde":	0
 		}, {
-			"username":	"joey",
-			"password":	"allen",
+			"username":	"hello",
+			"password":	"world",
 			"solde":	0
 		}, {
-			"username":	"testlevrai",
-			"password":	"vrailetest",
+			"username":	"haha",
+			"password":	"hello",
 			"solde":	0
 		}, {
-			"username":	"HAHAHAAH",
-			"password":	"MARRANT8",
+			"username":	"test1",
+			"password":	"test1",
 			"solde":	0
 		}, {
-			"username":	"joeyu",
-			"password":	"joeyyy",
+			"username":	"azert",
+			"password":	"y",
+			"solde":	0
+		}, {
+			"username":	"salut",
+			"password":	"france",
+			"solde":	0
+		}, {
+			"username":	"papa",
+			"password":	"sacha",
 			"solde":	0
 		}]
 }
