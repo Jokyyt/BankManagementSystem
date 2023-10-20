@@ -10,34 +10,34 @@ La gestion des fichiers est utilisée pour stocker les données et les informati
 
 ## Liste des Fonctions  
 
-Fonction : createAccount()  
+Fonction : **createAccount()**  
 Créer un compte ✓ 
 
-Fonction : Login()  
+Fonction : **Login()**  
 Se connecter à son compte ✓  
 
-Fonction : subtractsolde()    
+Fonction : **subtractsolde()**  
 Retirer de l'argent ✓  
 
-Fonction : addsolde()  
+Fonction : **addsolde()**  
 Déposer de l'argent ✓  
 
-Fonction : get_infos()  
+Fonction : **get_infos()**  
 Consulter le solde ✓  
 
-Fonction : deleteUser()  
+Fonction : **deleteUser()**  
 Clôturer le compte ✓  
 
-Fonction : confirm_choice()  
+Fonction : **confirm_choice()**  
 Confirmer son choix ✓  
 
-Fonction : verif_username_len(), verif_password()  
+Fonction : **verif_username_len()**, **verif_password()**  
 Restriction sur les inputs (username, password) ✓  
 
-Fonctions : checkInfos()  
+Fonctions : **checkInfos()**  
 Vérifier l'existence de noms d'utilisateur/mots de passe déjà utilisés ✓  
 
 ### Fonctions en cours...  
 Effectuer des virements entre comptes (futur option)  
 
-Générateur d'ID pour chaque compte (futur option)  
+Modifier les informations utilisateurs "username"/"password" (futur option)  
